@@ -1,0 +1,47 @@
+/* General styles for the homepage */
+.homepage-container {
+    background-color: #f3f4f6; /* Light gray */
+    min-height: 100vh;
+    padding: 1.5rem;
+    color: #4b0082; /* Purple text for global use */
+  }
+  
+  .homepage-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #4b0082; /* Purple text for title */
+  }
+  
+  /* Feedback section styles */
+  .feedback-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #e6e6fa; /* Lavender background for feedback section */
+    border-radius: 10px;
+    color: #4b0082; /* Purple text */
+  }
+  
+  .feedback-title, .feedback-list-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #4b0082; /* Purple text for feedback section headings */
+  }
+  
+  .feedback-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  
+  .feedback-item {
+    background-color: #ffffff; /* White background for feedback items */
+    color: #4b0082; /* Purple text for feedback messages */
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
