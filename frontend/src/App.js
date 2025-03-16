@@ -11,14 +11,14 @@ import DifficultySelection from "./components/DifficultySelection";
 import Result from "./components/Result";
 import Quiz from "./components/Quiz";
 import ProtectedRoute from "./components/ProtectedRoute";
-
+import ContestPage from './pages/ContestPage';
 const App = () => {
     return (
         <Router>
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
-
+                <Route path="/contestpage" element={<ContestPage />} />
                 {/* Protected Routes */}
                 <Route
                     path="/"

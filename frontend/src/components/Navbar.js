@@ -19,7 +19,7 @@ export default function Navbar() {
   const navigation = [
     { name: "Home", href: "/", current: true },
     { name: "Quiz", href: "/quiz", current: false },
-    { name: "Contest", href: "/contest", current: false },
+    { name: "Contest", href: "/ContestPage", current: false },
     ...(isAuthenticated
       ? [{ name: "Logout", href: "#", current: false, action: handleLogout }]
       : [
