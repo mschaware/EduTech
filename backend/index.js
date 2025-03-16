@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const dbConnect = require("./config/database");
 const courseRoutes = require("./routes/course");
 const cors = require('cors');
-
+const authRoutes = require("./routes/auth");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
@@ -21,7 +21,7 @@ app.use(bodyParser.json({ limit: "50mb" })); // Parse JSON bodies with a 50MB li
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 // Routes
 app.use("/api/v1", courseRoutes);
-
+app.use("/api/auth", authRoutes);
 // Test Route
 app.get("/", (req, res) => {
   res.send(`<h1>Backend is Running and this is '/' Route</h1>`);
