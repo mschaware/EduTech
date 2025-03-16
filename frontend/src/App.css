@@ -1,3 +1,5 @@
+/* Keep all existing styles as they are */
+
 .App {
   text-align: center;
 }
@@ -21,7 +23,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: white; /* Update this to use the new rule below if needed */
 }
 
 .App-link {
@@ -35,4 +37,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* NEW RULE: Set all text color to purple */
+body, h1, h2, h3, h4, h5, h6, p, li, span, a {
+  color: purple !important;
 }
