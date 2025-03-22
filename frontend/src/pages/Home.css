@@ -44,4 +44,69 @@
     margin-bottom: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+  .dark-mode .homepage-container {
+    background-color: #121212; /* Dark background */
+    color: #e6e6fa; /* Light text for dark mode */
+  }
   
+  .dark-mode .feedback-section {
+    background-color: #282828; /* Darker section background */
+    color: #e6e6fa; /* Adjusted text color */
+  }
+  
+  .dark-mode .feedback-item {
+    background-color: #383838; /* Feedback items in dark mode */
+  }
+  /* Dark mode background and text styles for CourseCard */
+.dark-mode .course-card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.dark-mode .course-card-title {
+  color: #a78bfa; /* Light purple */
+}
+
+.dark-mode .course-card-link {
+  color: #4f46e5; /* Blue for links */
+}
+/* Home.css */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .homepage-title {
+  color: #ffffff;
+}
+
+.dark-mode .feedback-section {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+.dark-mode .feedback-item {
+  color: #ffffff;
+}
+/* Home.css */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .homepage-container {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .homepage-title {
+  color: #ffffff;
+}
+
+.dark-mode .feedback-section {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+.dark-mode .feedback-item {
+  color: #ffffff;
+}

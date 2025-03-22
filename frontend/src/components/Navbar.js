@@ -1,19 +1,27 @@
+import React, { useState } from "react"; // To use state for authentication
+import { useNavigate } from "react-router-dom"; // For navigation
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+} from "@headlessui/react"; // Headless UI components
+import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from "@heroicons/react/24/solid"; // Icons for navbar
+import { Link } from "react-router-dom"; // For navigation links
 
-import { useState } from "react"; // Import useState to manage authentication
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Link, useNavigate } from 'react-router-dom';
-
-export default function Navbar() {
+export default function Navbar({ darkMode, toggleTheme }) {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(
-    localStorage.getItem("token") !== null // Check if the user is logged in
+    localStorage.getItem("token") !== null
   );
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // Remove authentication token
-    setIsAuthenticated(false); // Update state
-    navigate("/login"); // Redirect to login page
+    localStorage.removeItem("token");
+    setIsAuthenticated(false);
+    navigate("/login");
   };
 
   const navigation = [
@@ -38,9 +46,15 @@ export default function Navbar() {
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile Menu Button */}
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-purple-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
-              <Bars3Icon className="block size-6 group-data-open:hidden" aria-hidden="true" />
-              <XMarkIcon className="hidden size-6 group-data-open:block" aria-hidden="true" />
+            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-purple-700 hover:text-white focus:ring-2 focus:ring-white">
+              <Bars3Icon
+                className="block size-6 group-data-open:hidden"
+                aria-hidden="true"
+              />
+              <XMarkIcon
+                className="hidden size-6 group-data-open:block"
+                aria-hidden="true"
+              />
             </DisclosureButton>
           </div>
 
@@ -53,7 +67,7 @@ export default function Navbar() {
                     <button
                       key={item.name}
                       onClick={item.action}
-                      className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-bold"
+                      className="text-white hover:bg-gray-700 rounded-md px-3 py-2 text-lg font-bold"
                     >
                       {item.name}
                     </button>
@@ -62,7 +76,7 @@ export default function Navbar() {
                       key={item.name}
                       to={item.href}
                       className={classNames(
-                        "text-white hover:bg-gray-700 hover:text-white",
+                        "text-white hover:bg-gray-700",
                         "rounded-md px-3 py-2 text-lg font-bold"
                       )}
                     >
@@ -74,69 +88,37 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Profile & Logout Dropdown */}
-          {isAuthenticated && (
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          {/* Profile and Dark Mode Toggle */}
+          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            {/* Dark Mode Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="relative flex items-center justify-center w-8 h-8 rounded-full bg-gray-800 text-white hover:bg-gray-700"
+            >
+              {darkMode ? (
+                <SunIcon className="w-5 h-5" aria-hidden="true" />
+              ) : (
+                <MoonIcon className="w-5 h-5" aria-hidden="true" />
+              )}
+            </button>
+
+            {/* Profile Dropdown */}
+            {isAuthenticated && (
               <Menu as="div" className="relative ml-3">
                 <div>
-                  <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+                  <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                     <img
                       alt="User Profile"
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      className="size-8 rounded-full"
+                      className="h-8 w-8 rounded-full"
                     />
                   </MenuButton>
                 </div>
-
-                <MenuItems className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5">
-                  <MenuItem>
-                    <Link
-                      to="/profile"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Your Profile
-                    </Link>
-                  </MenuItem>
-                  <MenuItem>
-                    <button
-                      onClick={handleLogout}
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Sign out
-                    </button>
-                  </MenuItem>
-                </MenuItems>
               </Menu>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
-
-      {/* Mobile Navigation Menu */}
-      <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3">
-          {navigation.map((item) =>
-            item.name === "Logout" ? (
-              <button
-                key={item.name}
-                onClick={item.action}
-                className="block w-full text-left rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700"
-              >
-                {item.name}
-              </button>
-            ) : (
-              <DisclosureButton
-                key={item.name}
-                as={Link}
-                to={item.href}
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                {item.name}
-              </DisclosureButton>
-            )
-          )}
-        </div>
-      </DisclosurePanel>
     </Disclosure>
   );
 }

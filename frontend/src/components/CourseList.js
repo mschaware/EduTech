@@ -1,8 +1,9 @@
+// CourseList.js
 import React, { useEffect, useState } from "react";
 import { getCourses } from "../api/courses";
 import CourseCard from "./CourseCard";
 
-const CourseList = () => {
+const CourseList = ({ darkMode }) => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
@@ -19,10 +20,14 @@ const CourseList = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-      {courses.map((course) => (
-        <CourseCard key={course._id} course={course} />
-      ))}
+    <div className={`${darkMode ? "bg-gray-900" : "bg-gray-100"} p-6 flex justify-center`}>
+      <div className="w-full max-w-6xl"> {/* Constrain width for better alignment */}
+        <div className="grid grid-cols-1 gap-6">
+          {courses.map((course) => (
+            <CourseCard key={course._id} course={course} darkMode={darkMode} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

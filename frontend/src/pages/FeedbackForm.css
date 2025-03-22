@@ -1,69 +1,93 @@
-/* Container for the feedback form */
+/* Light mode styles */
 .feedback-form-container {
-    background-color: #e6e6fa; /* Lavender background for a soothing look */
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Heading styles */
-  .feedback-heading {
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #4b0082; /* Deep purple */
-  }
-  
-  /* Form styles */
-  .feedback-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  /* Form group styles */
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Input and label styles */
-  label {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #4b0082;
-  }
-  
-  input, textarea {
-    font-size: 1rem;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #ffffff;
-    color: #4b0082; /* Purple text for inputs */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Textarea adjustments for larger input area */
-  textarea {
-    height: 150px; /* Increased height */
-    resize: none; /* Prevent resizing */
-  }
-  
-  /* Button styling */
-  .submit-button {
-    background-color: #4b0082; /* Deep purple for the button */
-    color: #ffffff; /* White text */
-    font-size: 1.2rem;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #370061; /* Darker purple on hover */
-  }
-  
+  background-color: #e6e6fa; /* Lavender background */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #4b0082; /* Deep purple */
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #4b0082;
+}
+
+input,
+textarea {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #4b0082; /* Purple text for inputs */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  height: 150px; /* Increased height */
+  resize: none; /* Prevent resizing */
+}
+
+.submit-button {
+  background-color: #4b0082; /* Deep purple for the button */
+  color: #ffffff; /* White text */
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #370061; /* Darker purple on hover */
+}
+
+/* Dark mode styles */
+.feedback-form-container.dark-mode {
+  background-color: #2d2d2d !important; /* Dark background */
+  color: #ffffff !important; /* White text */
+}
+
+.feedback-form-container.dark-mode .feedback-heading {
+  color: #ffffff !important; /* White heading text */
+}
+
+.feedback-form-container.dark-mode label {
+  color: #ffffff !important; /* White label text */
+}
+
+.feedback-form-container.dark-mode input,
+.feedback-form-container.dark-mode textarea {
+  background-color: #1e1e1e !important; /* Dark input background */
+  color: #ffffff !important; /* White text */
+  border-color: #444 !important; /* Darker border */
+}
+
+.feedback-form-container.dark-mode .submit-button {
+  background-color: #bb86fc !important; /* Light purple for button */
+  color: #000000 !important; /* Black text */
+}
+
+.feedback-form-container.dark-mode .submit-button:hover {
+  background-color: #9a67ea !important; /* Darker light purple on hover */
+}
