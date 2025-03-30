@@ -12,22 +12,23 @@ import {
 import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from "@heroicons/react/24/solid"; // Icons for navbar
 import { Link } from "react-router-dom"; // For navigation links
 
-export default function Navbar({ darkMode, toggleTheme }) {
-  const navigate = useNavigate();
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    localStorage.getItem("token") !== null
-  );
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setIsAuthenticated(false);
-    navigate("/login");
-  };
+  export default function Navbar({ darkMode, toggleTheme }) {
+    const navigate = useNavigate();
+    const [isAuthenticated, setIsAuthenticated] = useState(
+      localStorage.getItem("token") !== null
+    );
+  
+    const handleLogout = () => {
+      localStorage.removeItem("token");
+      setIsAuthenticated(false);
+      navigate("/login");
+    };
 
   const navigation = [
     { name: "Home", href: "/", current: true },
     { name: "Quiz", href: "/quiz", current: false },
     { name: "Contest", href: "/ContestPage", current: false },
+    { name: "Community", href: "/community", current: false }, // Added Community link
     ...(isAuthenticated
       ? [{ name: "Logout", href: "#", current: false, action: handleLogout }]
       : [
@@ -42,6 +43,7 @@ export default function Navbar({ darkMode, toggleTheme }) {
 
   return (
     <Disclosure as="nav" className="bg-purple-800">
+      {
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile Menu Button */}
@@ -119,6 +121,7 @@ export default function Navbar({ darkMode, toggleTheme }) {
           </div>
         </div>
       </div>
+    }
     </Disclosure>
   );
 }
