@@ -28,6 +28,8 @@ import { Link } from "react-router-dom"; // For navigation links
     { name: "Home", href: "/", current: true },
     { name: "Quiz", href: "/quiz", current: false },
     { name: "Contest", href: "/ContestPage", current: false },
+    { name: "Compiler", href: "/compiler", current: false },
+
     { name: "Community", href: "/community", current: false }, // Added Community link
     ...(isAuthenticated
       ? [{ name: "Logout", href: "#", current: false, action: handleLogout }]

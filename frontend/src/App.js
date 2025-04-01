@@ -13,7 +13,7 @@ import Quiz from "./components/Quiz";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ContestPage from "./pages/ContestPage";
 import CommunityPage from "./components/CommunityPage"; // Import the new CommunityPage
-
+import CodeEditor from "./components/CodeEditor.js";
 const App = () => {
   const [darkMode, setDarkMode] = useState(false); // State for theme toggling
 
@@ -55,6 +55,15 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/compiler"
+            element={
+              <ProtectedRoute>
+                <CodeEditor />
+              </ProtectedRoute>
+            }
+          />
+          
           <Route
             path="/quizselect"
             element={
