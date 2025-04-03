@@ -93,10 +93,8 @@ const PORT = process.env.PORT || 8080;
 
 
 
-const leaderboardRoutes = require('./routes/leaderboardRoutes');
 
 
-app.use('/api', leaderboardRoutes);
 // Middleware
 app.use(cors());
 app.use(express.json());

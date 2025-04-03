@@ -14,7 +14,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import ContestPage from "./pages/ContestPage";
 import CommunityPage from "./components/CommunityPage"; // Import the new CommunityPage
 import CodeEditor from "./components/CodeEditor.js";
-import Leaderboard from "./pages/Leaderboard";
+
 
 
 const App = () => {
@@ -32,7 +32,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/contestpage" element={<ContestPage />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
+         
           {/* Protected Routes */}
           <Route
             path="/"

@@ -154,9 +154,9 @@ export default function Navbar({ darkMode, toggleTheme }) {
     localStorage.getItem("token") !== null
   );
 
-  const handleLeaderboardClick = () => {
-    navigate("/leaderboard");
-  };
+  // const handleLeaderboardClick = () => {
+  //   navigate("/leaderboard");
+  // };
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -233,13 +233,8 @@ export default function Navbar({ darkMode, toggleTheme }) {
           {/* Leaderboard Button, Dark Mode Toggle, and Profile */}
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             {/* Leaderboard Button */}
-            <button
-              onClick={handleLeaderboardClick}
-              className="p-2 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 mr-4"
-              title="Leaderboard"
-            >
-              <span className="text-xl">🔥</span>
-            </button>
+            
+            
 
             {/* Dark Mode Toggle */}
             <button
