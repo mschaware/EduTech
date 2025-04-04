@@ -28,13 +28,13 @@ const Home = () => {
   };
 
   return (
-    <div className={`homepage-container ${darkMode ? "dark-mode" : ""}`}>
+    <div className={`homepage-container bg-gradient-to-r from-gray-500 via-purple to-gray-900 ${darkMode ? "dark-mode" : ""}`}>
       <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
-      <h1 className="homepage-title">Welcome to Our Website</h1>
+      <h1 className="homepage-title"></h1>
       <CourseList darkMode={darkMode} />
       
       {/* Feedback Section */}
-      <div className="feedback-section">
+      <div className="feedback-section ">
         <h2 className="feedback-title"></h2>
         <FeedbackForm addFeedback={addFeedback} />
         <h2 className="feedback-list-title">User Feedback</h2>
