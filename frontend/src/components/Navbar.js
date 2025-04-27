@@ -183,7 +183,7 @@ export default function Navbar({ darkMode, toggleTheme }) {
   }
 
   return (
-    <Disclosure as="nav" className="bg-purple-800 bg-gradient-to-br from-gray-900 via-purple-1000 to-gray-00">
+    <Disclosure as="nav" className="sticky bg-purple-800 bg-gradient-to-br from-gray-900 via-purple-1000 to-gray-00">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-purple-1000 to-gray-00">
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile Menu Button */}

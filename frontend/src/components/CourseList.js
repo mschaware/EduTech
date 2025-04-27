@@ -100,10 +100,10 @@ const CourseList = ({ darkMode }) => {
           className="text-center mb-12"
         >
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400">
-            Programming Courses
+
           </h1>
           <p className="text-xl text-gray-300">
-            Master different programming languages through structured learning paths
+           
           </p>
         </motion.div>
 
