@@ -81,7 +81,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FiBook, FiCode, FiArrowRight, FiAward } from "react-icons/fi";
+import { FiBook, FiCode, FiArrowRight} from "react-icons/fi";
 // import './CourseCard.css';
 const CourseCard = ({ course }) => {
   return (

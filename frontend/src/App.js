@@ -1,6 +1,7 @@
+
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar"; // Assuming Navbar is in components folder
+//import Navbar from "./components/Navbar"; // Assuming Navbar is in components folder
 import Home from "./pages/Home";
 import SubCourseDetails from "./pages/SubCourseDetails";
 import Login from "./pages/Login";
@@ -18,9 +19,9 @@ import CodeEditor from "./components/CodeEditor.js";
 
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false); // State for theme toggling
+  const [darkMode] = useState(false); // State for theme toggling
 
-  const toggleTheme = () => setDarkMode(!darkMode); // Function to toggle theme
+  //const toggleTheme = () => setDarkMode(!darkMode); // Function to toggle theme
 
   return (
     <Router>
