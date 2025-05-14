@@ -37,13 +37,21 @@ const Quiz = () => {
   }, []);
 
   // Timer logic
+  // useEffect(() => {
+  //   const countdown = timer > 0 && setInterval(() => setTimer(timer - 1), 1000);
+  //   if (timer === 0) {
+  //     handleAnswer(false);
+  //   }
+  //   return () => clearInterval(countdown);
+  // }, [timer]);
   useEffect(() => {
-    const countdown = timer > 0 && setInterval(() => setTimer(timer - 1), 1000);
-    if (timer === 0) {
-      handleAnswer(false);
-    }
-    return () => clearInterval(countdown);
-  }, [timer]);
+  const countdown = timer > 0 && setInterval(() => setTimer(timer - 1), 1000);
+  if (timer === 0) {
+    handleAnswer(false);
+  }
+  return () => clearInterval(countdown);
+}, [timer, handleAnswer]); // ✅ Add handleAnswer to dependencies
+
 
   const handleAnswer = (isCorrect) => {
     setSelectedOption(null);
